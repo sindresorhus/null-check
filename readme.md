@@ -18,7 +18,7 @@ const nullCheck = require('null-check');
 try {
 	nullCheck('unicorn.png\u0000');
 } catch (err) {
-	//=> `Path must be a string without null bytes.`
+	//=> 'Path must be a string without null bytes.'
 }
 ```
 
