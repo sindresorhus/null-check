@@ -15,8 +15,11 @@ $ npm install --save null-check
 ```js
 const nullCheck = require('null-check');
 
-nullCheck('unicorn.png\u0000');
-//=> throws `Path must be a string without null bytes.`
+try {
+	nullCheck('unicorn.png\u0000');
+} catch (err) {
+	//=> `Path must be a string without null bytes.`
+}
 ```
 
 
