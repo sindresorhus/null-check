@@ -1,18 +1,8 @@
-'use strict';
-var test = require('ava');
-var nullCheck = require('./');
+import test from 'ava';
+import fn from './';
 
-test('async', function (t) {
-	t.plan(2);
-
-	nullCheck('unicorn.png\u0000', function (err) {
-		t.assert(err, err);
-		console.log(err)
-		t.assert(err.code === 'ENOENT');
-	});
-});
-
-test('sync', function (t) {
-	t.assert(nullCheck('unicorn.png'));
+test(t => {
+	t.throws(() => fn('unicorn.png\u0000'), Error, 'Path must be a string without null bytes.');
+	t.doesNotThrow(() => fn('unicorn.png'));
 	t.end();
 });
