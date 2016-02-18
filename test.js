@@ -1,7 +1,7 @@
 import test from 'ava';
-import fn from './';
+import m from './';
 
 test(t => {
-	t.throws(() => fn('unicorn.png\u0000'), Error, 'Path must be a string without null bytes.');
-	t.doesNotThrow(() => fn('unicorn.png'));
+	t.throws(() => m('unicorn.png\u0000'), Error, 'Path must be a string without null bytes.');
+	t.notThrows(() => m('unicorn.png'));
 });
