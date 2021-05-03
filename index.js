@@ -1,9 +1,9 @@
-'use strict';
-module.exports = function (pth) {
-	if (String(pth).indexOf('\u0000') !== -1) {
-		var err = new Error('Path must be a string without null bytes.');
-		err.code = 'ENOENT';
-
-		throw err;
+export default function nullCheck(path) {
+	if (!path.includes('\u0000')) {
+		return;
 	}
-};
+
+	const error = new Error('Path must be a string without null bytes.');
+	error.code = 'ENOENT';
+	throw error;
+}

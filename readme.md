@@ -5,13 +5,13 @@
 ## Install
 
 ```
-$ npm install --save null-check
+$ npm install null-check
 ```
 
 ## Usage
 
 ```js
-const nullCheck = require('null-check');
+import nullCheck from 'null-check';
 
 try {
 	nullCheck('unicorn.png\u0000');

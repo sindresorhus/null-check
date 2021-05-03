@@ -1,37 +1,40 @@
 {
-  "name": "null-check",
-  "version": "2.0.0",
-  "description": "Ensure a path doesn't contain null bytes",
-  "license": "MIT",
-  "repository": "sindresorhus/null-check",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "built-in",
-    "core",
-    "ponyfill",
-    "polyfill",
-    "shim",
-    "fs",
-    "path",
-    "null",
-    "bytes",
-    "check"
-  ],
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  }
+	"name": "null-check",
+	"version": "2.0.0",
+	"description": "Ensure a path doesn't contain null bytes",
+	"license": "MIT",
+	"repository": "sindresorhus/null-check",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=12"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"built-in",
+		"core",
+		"ponyfill",
+		"polyfill",
+		"shim",
+		"fs",
+		"path",
+		"null",
+		"bytes",
+		"check"
+	],
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"xo": "^0.39.1"
+	}
 }

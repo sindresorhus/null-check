@@ -1,7 +1,14 @@
 import test from 'ava';
-import m from './';
+import nullCheck from './index.js';
 
-test(t => {
-	t.throws(() => m('unicorn.png\u0000'), Error, 'Path must be a string without null bytes.');
-	t.notThrows(() => m('unicorn.png'));
+test('main', t => {
+	t.throws(() => {
+		nullCheck('unicorn.png\u0000');
+	}, {
+		message: 'Path must be a string without null bytes.'
+	});
+
+	t.notThrows(() => {
+		nullCheck('unicorn.png');
+	});
 });
